@@ -73,17 +73,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'testSite.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+Database
+https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# Default that comes with djagno
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+Default that comes with djagno
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
+'''
 # Mysql Database
 # Password for testing is devT3st
 # Delete this all in production
@@ -97,7 +98,7 @@ DATABASES = {
         'PORT': '',
     }
 }
-
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
