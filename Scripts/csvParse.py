@@ -26,6 +26,21 @@ def create_connection(db_file):
 #     """
 #     sql = '''INSERT INTO  address'''
 
+def insertData(homeList, conn):
+    curr = conn.cursor()
+    count = 0
+    for dataPoint in homeList:
+        addy = dataPoint[0]
+        est = dataPoint[1]
+        ni = dataPoint[2]
+
+        completeSet = (count,addy,est,ni)
+        # Insert points
+        curr.execute("INSERT INTO homevalue_homeinfo VALUES (?,?,?,?)", completeSet)
+        conn.commit()
+        print("Added to database " + str(count))
+        count += 1
+
 
 def select_all_tasks(conn):
     """
@@ -119,17 +134,19 @@ def openCSV():
 
 
 def main():
-    database = 'E:/revre/revreTech/testSite.sqlite3'
+    database = 'E:/revre/revreTech/testSite/db.sqlite3'
  
     # create a database connection
     addyList, averages = openCSV()
 
     # Connection to Database works
     conn = create_connection(database)
-    with conn:
-        print("1. Query task by priority:")
-        print("2. Query all tasks")
-        print("DataBaseCONNECT")
+    insertData(addyList, conn)
+
+    # with conn:
+    #     print("1. Query task by priority:")
+    #     print("2. Query all tasks")
+    #     print("DataBaseCONNECT")
 
 
 if __name__ == '__main__':
