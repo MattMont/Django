@@ -1,0 +1,13 @@
+<html>
+<h1>Results</h1>
+<ul>
+	{% if results %}
+		{% for result in results %}
+			<li>{{ result.address }}
+			{{ result.estimate }} </li>
+		{% endfor %}
+</ul>
+{% else %}
+	<h1>Failed</h1>
+{% endif %}
+</html>
