@@ -19,3 +19,9 @@ def index(request):
 
     return render(request, "test.html", {'form': search})
     #return HttpResponse('HELLO FROM HOMEVALUE')
+
+def singleView(request, id):
+    aTest = Homeinfo.objects.get(id=id)
+    print(aTest.address)
+    return render(request, "singleHome.html", {'house': aTest})
+    #return HttpResponse("Test")

@@ -1,0 +1,9 @@
+<html>
+<h1>Here is your house!</h1>
+{% if house %}
+	<h2>{{ house.address }}<h2>
+	<body> Estimate: ${{house.estimate}}</body>
+{% else %}
+	<body> Nothing to see here </body>
+{% endif %}
+</html>

@@ -3,7 +3,7 @@
 <ul>
 	{% if results %}
 		{% for result in results %}
-			<li>{{ result.address }}
+			<li><a href={{result.get_absolute_url}}>{{ result.address }}
 			{{ result.estimate }} </li>
 		{% endfor %}
 </ul>
