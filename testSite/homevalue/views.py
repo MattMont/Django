@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from homevalue.forms import ValueForm
 from homevalue.models import Homeinfo
 
+import sys, requests
+
+
 # Create your views here.
 def index(request):
 
@@ -22,6 +25,12 @@ def index(request):
 
 def singleView(request, id):
     aTest = Homeinfo.objects.get(id=id)
-    print(aTest.address)
+
+    # Might not need this
+    # https://stackoverflow.com/questions/25888396/how-to-get-latitude-longitude-with-python
+    addyPlus = aTest.address.replace(" ", "+")
+    print(addyPlus,file=sys.stderr)
+
+
     return render(request, "singleHome.html", {'house': aTest})
     #return HttpResponse("Test")
