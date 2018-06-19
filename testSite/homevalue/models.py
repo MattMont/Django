@@ -9,3 +9,4 @@ class Homeinfo(models.Model):
 
     def get_absolute_url(self):
         return reverse('sView', kwargs={'id': str(self.id)})
+        #return reverse('hView', kwargs={'id': str(self.id)})

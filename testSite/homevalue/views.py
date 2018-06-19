@@ -1,15 +1,41 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from homevalue.forms import ValueForm
+from homevalue.forms import ValueForm, valAutoForm
 from homevalue.models import Homeinfo
+from django.views import generic
+from django.urls import reverse
+
+from dal import autocomplete
 
 import sys, requests
 
 
 # Create your views here.
+
+# Auto Compelete 
+# Base on: https://django-autocomplete-light.readthedocs.io/en/3.1.3/tutorial.html
+class homeAutoComplete(autocomplete.Select2QuerySetView):
+    def get_queryset(self):
+        qs = Homeinfo.objects.all()
+        if self.q:
+            qs = qs.filter(address__istartswith=self.q)
+        return qs
+
+# Another Test
+# class UpdateHome(generic.UpdateView):
+#     model = Homeinfo
+#     form_class = valAutoForm
+#     template_name = 'autoComplete.html'
+#     success_url = reverse("autocomplete")
+
+#     def get_object(self):
+#         return Homeinfo.objects.first()
+
+
+
+
+# No autocomplete
 def index(request):
-
-
     if request.method == 'POST':
         search = ValueForm(request.POST)
         if search.is_valid():
@@ -23,6 +49,8 @@ def index(request):
     return render(request, "test.html", {'form': search})
     #return HttpResponse('HELLO FROM HOMEVALUE')
 
+
+# Single home info 
 def singleView(request, id):
     aTest = Homeinfo.objects.get(id=id)
 
