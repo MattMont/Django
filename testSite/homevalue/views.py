@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from homevalue.forms import ValueForm, valAutoForm
 from homevalue.models import Homeinfo
 from django.views import generic
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 from dal import autocomplete
 
@@ -14,22 +14,23 @@ import sys, requests
 
 # Auto Compelete 
 # Base on: https://django-autocomplete-light.readthedocs.io/en/3.1.3/tutorial.html
-class homeAutoComplete(autocomplete.Select2QuerySetView):
-    def get_queryset(self):
-        qs = Homeinfo.objects.all()
-        if self.q:
-            qs = qs.filter(address__istartswith=self.q)
-        return qs
+# class homeAutoComplete(autocomplete.Select2QuerySetView):
+#     template_name = 'autoComplete.html'
+#     def get_queryset(self):
+#         qs = Homeinfo.objects.all().order_by('id')
+#         if self.q:
+#             qs = qs.filter(address__istartswith=self.q)
+#         return qs
 
 # Another Test
-# class UpdateHome(generic.UpdateView):
-#     model = Homeinfo
-#     form_class = valAutoForm
-#     template_name = 'autoComplete.html'
-#     success_url = reverse("autocomplete")
+class homeAutoComplete(generic.UpdateView):
+    model = Homeinfo
+    form_class = valAutoForm
+    template_name = 'autoComplete.html'
+    success_url = reverse_lazy("homeAutoComplete")
 
-#     def get_object(self):
-#         return Homeinfo.objects.first()
+    def get_object(self):
+        return Homeinfo.objects.first()
 
 
 
@@ -38,6 +39,7 @@ class homeAutoComplete(autocomplete.Select2QuerySetView):
 def index(request):
     if request.method == 'POST':
         search = ValueForm(request.POST)
+        #search = valAutoForm(request.POST)
         if search.is_valid():
             #find = Homeinfo.objects.get(title__regex=r''+)
             #print(search.cleaned_data["addy"])
