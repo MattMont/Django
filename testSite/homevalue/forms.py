@@ -8,7 +8,7 @@ class ValueForm(forms.Form):
 class valAutoForm(forms.ModelForm):
     theAddy = forms.ModelChoiceField(
         queryset=Homeinfo.objects.all(),
-        widget=autocomplete.ModelSelect2(url='index')
+        widget=autocomplete.ModelSelect2(url='homeAutoComplete')
         )
     class Meta:
         model = Homeinfo
@@ -20,5 +20,5 @@ class valAuto(forms.ModelForm):
         model = Homeinfo
         fields = ('__all__')
         widgets = {
-            'address': autocomplete.ModelSelect2(url='homeAutoComplete')
+            'address': autocomplete.ListSelect2(url='homeAutoComplete')
         }

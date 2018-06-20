@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from homevalue.forms import ValueForm, valAutoForm
+from homevalue.forms import ValueForm, valAutoForm, valAuto
 from homevalue.models import Homeinfo
 from django.views import generic
 from django.urls import reverse, reverse_lazy
@@ -16,6 +16,7 @@ import sys, requests
 # Base on: https://django-autocomplete-light.readthedocs.io/en/3.1.3/tutorial.html
 # class homeAutoComplete(autocomplete.Select2QuerySetView):
 #     template_name = 'autoComplete.html'
+#     form_class = valAuto
 #     def get_queryset(self):
 #         qs = Homeinfo.objects.all().order_by('id')
 #         if self.q:
@@ -31,7 +32,6 @@ class homeAutoComplete(generic.UpdateView):
 
     def get_object(self):
         return Homeinfo.objects.first()
-
 
 
 
