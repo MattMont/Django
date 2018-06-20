@@ -26,12 +26,14 @@ import sys, requests
 # Another Test
 class homeAutoComplete(generic.UpdateView):
     model = Homeinfo
-    form_class = valAutoForm
+    form_class = valAuto
     template_name = 'autoComplete.html'
     success_url = reverse_lazy("homeAutoComplete")
 
     def get_object(self):
         return Homeinfo.objects.first()
+
+
 
 
 

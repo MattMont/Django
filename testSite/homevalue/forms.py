@@ -1,12 +1,13 @@
 from django import forms
 from .models import Homeinfo
 from dal import autocomplete
+from django.urls import reverse_lazy
 
 class ValueForm(forms.Form):
     addy = forms.CharField(label="",initial="Address",max_length=100)
 
 class valAutoForm(forms.ModelForm):
-    theAddy = forms.ModelChoiceField(
+    Address = forms.ModelChoiceField(
         queryset=Homeinfo.objects.all(),
         widget=autocomplete.ModelSelect2(url='homeAutoComplete')
         )
@@ -18,7 +19,7 @@ class valAutoForm(forms.ModelForm):
 class valAuto(forms.ModelForm):
     class Meta:
         model = Homeinfo
-        fields = ('__all__')
+        fields = ('address',)
         widgets = {
             'address': autocomplete.ListSelect2(url='homeAutoComplete')
         }
