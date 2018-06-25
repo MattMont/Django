@@ -10,52 +10,45 @@
 
 <!DOCTYPE html>
 
+
+
 <html>
   <head>
     <meta charset="utf-8">
-    <title>House Estimate</title>
+    <title>Street View side-by-side</title>
     <style>
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
-        float: center;
-        position: center;
         text-align: center;
       }
       #map, #pano {
-        float: center;
+        float: left;
         height: 50%;
         width: 50%;
-        position: absolute;
-        left: 50%;
-        margin-left: -175px;
-
-
-
       }
     </style>
-    <h1 align="center"> Here is your house!</h1>
-    <h1>{{ house.address }}</h1>
-    <h2> Estimate: ${{house.estimate}} </h2>
   </head>
-  <body align='center'>
-<!--     <div id="map" align='center'></div> -->
-    <div id="pano" align='center'></div>
+  <h1> {{house.address}}</h1>
+  <body>
+    <div id="map"></div>
+    <div id="pano"></div>
     <script>
 
       function initialize() {
         var fenway = {lat: 42.345573, lng: -71.098326};
-        // var map = new google.maps.Map(document.getElementById('map'), {
-        //   center: fenway,
-        //   zoom: 14
-        // });
+        var stView = {lat: {{house.latitude}}, lng:{{house.longitude}}}
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: stView,
+          zoom: 14
+        });
         var panorama = new google.maps.StreetViewPanorama(
             document.getElementById('pano'), {
-              position: fenway,
+              position: stView,
               pov: {
-                heading: 34,
-                pitch: 10
+                heading: 0,
+                pitch: -10
               }
             });
         map.setStreetView(panorama);
@@ -65,4 +58,6 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbBz8MmtgkZxT2hD_AMBKEIHr7MnPV1Ac&callback=initialize">
     </script>
   </body>
+  <p> </p>
+  <h2>Your Estimate: {{house.estimate}}</h2>
 </html>
