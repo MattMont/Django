@@ -26,14 +26,17 @@ import sys, requests
 
 # Another Test
 # Failed but keeping for the week of torment it gave me
-# class homeAutoComplete(generic.UpdateView):
-#     model = Homeinfo
-#     form_class = valAuto
-#     template_name = 'autoComplete.html'
-#     success_url = reverse_lazy("homeAutoComplete")
+class homeAutoComplete(generic.UpdateView):
+    model = Homeinfo
+    form_class = valAuto
+    template_name = 'get_addy.html'
+    success_url = reverse_lazy("homeAutoComplete")
 
-#     def get_object(self):
-#         return Homeinfo.objects.first()
+    # def form_valid(self, form):
+    #     return super().form_valid(form)
+
+    def get_object(self):
+        return Homeinfo.objects.first()
 
 def get_addy(request):
     print('TEST')
@@ -77,14 +80,14 @@ def index(request):
 
 
 # Single home info 
-# def singleView(request, id):
-#     aTest = Homeinfo.objects.get(id=id)
+def singleView(request, id):
+    aTest = Homeinfo.objects.get(id=id)
 
-#     # Might not need this
-#     # https://stackoverflow.com/questions/25888396/how-to-get-latitude-longitude-with-python
-#     addyPlus = aTest.address.replace(" ", "+")
-#     print(addyPlus,file=sys.stderr)
+    # Might not need this
+    # https://stackoverflow.com/questions/25888396/how-to-get-latitude-longitude-with-python
+    addyPlus = aTest.address.replace(" ", "+")
+    print(addyPlus,file=sys.stderr)
 
 
-#     return render(request, "singleHome.html", {'house': aTest})
+    return render(request, "singleHome.html", {'house': aTest})
     #return HttpResponse("Test")
