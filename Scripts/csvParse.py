@@ -33,6 +33,9 @@ def insertData(homeList, conn):
         addy = dataPoint[0]
         est = dataPoint[1]
         ni = dataPoint[2]
+        lt = dataPoint[3]
+        ln = dataPoint[4]
+
 
         completeSet = (count,addy,est,ni)
         # Insert points
@@ -70,6 +73,8 @@ def openCSV():
     number = test.House_Number
     street = test.Street_Name
     suite = test.Suite
+    lat = test.Latitude
+    lntude = test.Longitude
 
 
     maxLen = len(number)-1
@@ -103,6 +108,8 @@ def openCSV():
         hnplist.append(totalAddress)
         hnplist.append(intPrice)
         hnplist.append(hood[i])
+        hnplist.append(lat)
+        hnplist.append(lntude)
 
         masterList.append(hnplist)
         i+=1
