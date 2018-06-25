@@ -4,6 +4,7 @@ import sqlite3
 import csv
 import pandas as pd
 import copy
+import numpy as np
 from sqlite3 import Error
 
 def create_connection(db_file):
@@ -33,13 +34,23 @@ def insertData(homeList, conn):
         addy = dataPoint[0]
         est = dataPoint[1]
         ni = dataPoint[2]
+        lt = dataPoint[3].astype(float)
+        ln = dataPoint[4].astype(float)
+        #lt = lt.Series.astype(float)
+        #ln = ln.Series.astype(float)
 
-        completeSet = (count,addy,est,ni)
+
+        print(type(ln))
+        print(ln)
+        completeSet = (count,est,ni,lt,ln,'Edmonton','Canada','Alberta',addy)
         # Insert points
-        curr.execute("INSERT INTO homevalue_homeinfo VALUES (?,?,?,?)", completeSet)
-        conn.commit()
+        print(type(lt))
+        curr.execute("INSERT INTO homevalue_homeinfo VALUES (?,?,?,?,?,?,?,?,?)", completeSet)
+        #conn.commit()
         print("Added to database " + str(count))
         count += 1
+    conn.commit()
+    print('Commited all')
 
 
 def select_all_tasks(conn):
@@ -58,7 +69,10 @@ def select_all_tasks(conn):
 
 def openCSV():
     #with open('E:/revre/revreTech\EdmontonData/EdmontonHseData.csv', newline='') as csvfile:
-    test = pd.read_csv('E:/revre/revreTech\EdmontonData/EdmontonHseData.csv',sep=',')    
+    # WINDOWS
+    #test = pd.read_csv('E:/revre/revreTech\EdmontonData/EdmontonHseData.csv',sep=',')
+    # MAC
+    test = pd.read_csv('~/Documents/revreTech/EdmontonData/EdmontonHseData.csv', sep=',')    
     # get number of columns
     test.columns = test.columns.str.replace('\s+','_')
 
@@ -70,7 +84,8 @@ def openCSV():
     number = test.House_Number
     street = test.Street_Name
     suite = test.Suite
-
+    lat = test.Latitude
+    lntude = test.Longitude
 
     maxLen = len(number)-1
     i = 0 # i refers to index
@@ -103,6 +118,8 @@ def openCSV():
         hnplist.append(totalAddress)
         hnplist.append(intPrice)
         hnplist.append(hood[i])
+        hnplist.append(lat[i])
+        hnplist.append(lntude[i])
 
         masterList.append(hnplist)
         i+=1
@@ -134,13 +151,25 @@ def openCSV():
 
 
 def main():
-    database = 'E:/revre/revreTech/testSite/db.sqlite3'
+    # Windows
+    #database = 'E:/revre/revreTech/testSite/db.sqlite3'
+
+    # Mac
+    #database = '~/Documents/revreTech/db.sqlite3'
+    database ='../testSite/db.sqlite3'
+
+    conn = create_connection(database)
+
+    if conn == None:
+        print("No connection")
+        exit(-1)
  
     # create a database connection
     addyList, averages = openCSV()
 
     # Connection to Database works
-    conn = create_connection(database)
+    #conn = create_connection(database)
+
     insertData(addyList, conn)
 
     # with conn:
