@@ -4,7 +4,7 @@ from dal import autocomplete
 from django.urls import reverse_lazy
 
 class ValueForm(forms.Form):
-    addy = forms.CharField(label="",initial="Address",max_length=100)
+    addy = forms.CharField(label="",max_length=100)
 
 class valAutoForm(forms.ModelForm):
     Address = forms.ModelChoiceField(

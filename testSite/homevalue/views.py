@@ -60,6 +60,42 @@ def get_addy(request):
     return HttpResponse(data, mimetype)
 
 
+def indexAuto(request):
+    if request.method == 'POST':
+        search = ValueForm(request.POST)
+        #search = valAutoForm(request.POST)
+        if search.is_valid():
+            #find = Homeinfo.objects.get(title__regex=r''+)
+            print(search.cleaned_data["addy"])
+            hope = search.cleaned_data["addy"].split(',')
+            final = ""
+            more = str(hope[0])
+            sleep = more.split(' ')
+            if(sleep[-1] == 'Avenue'):
+                for part in sleep:
+                    final += str(part) + " "
+            elif(sleep[-1] == 'Street'):
+                for part in sleep:
+                    final += str(part) + " "
+            else:
+                sleep.pop(-1)
+                for part in sleep:
+                    final += str(part) + " "
+
+            print(final)
+
+
+            test = Homeinfo.objects.all().filter(address__contains=final)
+            print(len(test))
+            if(len(test) > 1):
+                return render(request, "resultsTest.html", {'results': test})
+            else:
+                return render(request, "singleHome.html", {'house': test[0]})
+    else:
+        search = ValueForm()
+
+    return render(request, "autoaddress.html", {'form': search})
+
 
 
 # No autocomplete
