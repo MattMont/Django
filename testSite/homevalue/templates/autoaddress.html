@@ -64,14 +64,14 @@
   </head>
 
   <body>
-    <div id="locationField">
+<!--     <div id="locationField">
     <form>
       <input id="autocomplete" autocomplete="new-password" 
              placeholder="Enter your address"
              onFocus="geolocate()" type="text">
-    </form>
+    </form> 
 
-    </div>
+    </div> -->
 
     <div id="abc">
       <form method="post" id="butts" >
@@ -134,17 +134,16 @@
       function initAutocomplete() {
         // Create the autocomplete object, restricting the search to geographical
         // location types.
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('id_addy')),
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById('id_addy')),
             {types: ['geocode']});
 
-        otherauto = new google.maps.places.Autocomplete((document.getElementById('id_addy')),
-          {types: ['goecode']});
+        // otherauto = new google.maps.places.Autocomplete((document.getElementById('id_addy')),
+        //   {types: ['goecode']});
 
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
         autocomplete.addListener('place_changed', fillInAddress);
-        otherauto.addListener('place_changed', fillInAddress);
+        // otherauto.addListener('place_changed', fillInAddress);
       }
 
       function fillInAddress() {

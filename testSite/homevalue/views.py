@@ -71,6 +71,10 @@ def indexAuto(request):
             final = ""
             more = str(hope[0])
             sleep = more.split(' ')
+
+            # Our Database doesn't exactly match up with google
+            # So we have to cut some of the data off 
+            # Needs to be tested more but i think it works?
             if(sleep[-1] == 'Avenue'):
                 for part in sleep:
                     final += str(part) + " "
@@ -82,11 +86,11 @@ def indexAuto(request):
                 for part in sleep:
                     final += str(part) + " "
 
-            print(final)
-
+            #print(final)
 
             test = Homeinfo.objects.all().filter(address__contains=final)
-            print(len(test))
+
+            # If somehow there is a longer list
             if(len(test) > 1):
                 return render(request, "resultsTest.html", {'results': test})
             else:
