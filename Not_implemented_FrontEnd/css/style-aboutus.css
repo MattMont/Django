@@ -1,0 +1,50 @@
+elated*/
+.nav{
+  padding: 0px;
+  z-index: 3;
+  position: relative;
+}
+
+.nav-link{
+  color: #fff;
+}
+
+/*For Primary Header*/
+
+.v-header{
+  height:50vh;
+  display:flex;
+  align-items:center;
+  color:#fff;
+}
+
+.header-container{
+  background: url(../img/nice-house.jpg);
+  background-size: cover; 
+  padding-left:1rem;
+  padding-right:1rem;
+  text-align:center;
+  justify-content: center;
+  margin-top: -100px;
+  padding-top: 100px;
+  padding-bottom: 250px;
+  z-index:;
+}
+
+.header-content h1{
+  font-size:50px;
+  margin-bottom:0;
+  padding-top: 150px;
+  padding-bottom: 40px;
+  font-family: Helvetica;
+  color: #fff;
+}
+
+.secondary-head{
+  align-content: center;
+  text-align: center;
+  font-family: Helvetica;
+}
+
+/*FOOTER*/
+
