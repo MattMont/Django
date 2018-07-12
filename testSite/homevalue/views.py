@@ -26,17 +26,17 @@ import sys, requests
 
 # Another Test
 # Failed but keeping for the week of torment it gave me
-class homeAutoComplete(generic.UpdateView):
-    model = Homeinfo
-    form_class = valAuto
-    template_name = 'get_addy.html'
-    success_url = reverse_lazy("homeAutoComplete")
+# class homeAutoComplete(generic.UpdateView):
+#     model = Homeinfo
+#     form_class = valAuto
+#     template_name = 'get_addy.html'
+#     success_url = reverse_lazy("homeAutoComplete")
 
-    # def form_valid(self, form):
-    #     return super().form_valid(form)
+#     # def form_valid(self, form):
+#     #     return super().form_valid(form)
 
-    def get_object(self):
-        return Homeinfo.objects.first()
+#     def get_object(self):
+#         return Homeinfo.objects.first()
 
 def get_addy(request):
     print('TEST')
@@ -59,6 +59,46 @@ def get_addy(request):
     mimetype = 'application/json'
     return HttpResponse(data, mimetype)
 
+
+def indexAuto(request):
+    if request.method == 'POST':
+        search = ValueForm(request.POST)
+        #search = valAutoForm(request.POST)
+        if search.is_valid():
+            #find = Homeinfo.objects.get(title__regex=r''+)
+            print(search.cleaned_data["addy"])
+            hope = search.cleaned_data["addy"].split(',')
+            final = ""
+            more = str(hope[0])
+            sleep = more.split(' ')
+
+            # Our Database doesn't exactly match up with google
+            # So we have to cut some of the data off 
+            # Needs to be tested more but i think it works?
+            if(sleep[-1] == 'Avenue'):
+                for part in sleep:
+                    final += str(part) + " "
+            elif(sleep[-1] == 'Street'):
+                for part in sleep:
+                    final += str(part) + " "
+            else:
+                sleep.pop(-1)
+                for part in sleep:
+                    final += str(part) + " "
+
+            #print(final)
+
+            test = Homeinfo.objects.all().filter(address__contains=final)
+
+            # If somehow there is a longer list
+            if(len(test) > 1):
+                return render(request, "resultsTest.html", {'results': test})
+            else:
+                return render(request, "singleHome.html", {'house': test[0]})
+    else:
+        search = ValueForm()
+
+    return render(request, "autoaddress.html", {'form': search})
 
 
 
