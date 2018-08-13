@@ -1,0 +1,12 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#map, #pano {
+  float: left;
+  height: 50%;
+  width: 50%;
+
+}
