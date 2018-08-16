@@ -12,18 +12,41 @@ https://developers.google.com/maps/documentation/javascript/examples/places-auto
     {% load static %}
     <link rel="stylesheet" href="{% static 'homevalue/css/autoaddress.css' %}">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-    <script src="{% static 'homevalue/js/autoaddress.js' %}"></script> 
+    <script src="{% static 'homevalue/js/autoaddress.js' %}"></script>
   </head>
 
   <body>
+    <div class="bg">
+        <div class="flex-row">
+            <div class="center">
+                <h2>Get Your Home Price.</h2>
+                <h2>Right Here, Right Now.</h2>
+            </div>
+        </div>
 
-    <div>
-      <form method="post">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Search</button>
-      </form>
+        <div class="flex-row">
+            <div class="frm">
+                <form method="post">
+                  {% csrf_token %}
+                  {{ form }}
+                  <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
     </div>
+    <div>
+        <div class="flex-row">
+            <div class="center">
+                <h2>Don't Jump Through Hoops.</h2>
+                <p>Agents will....</p>
+            </div>
+       </div>
+       <div class="flex-row">
+           <button type="button" class="btn1">Sell With Revre</button>
+           <button type="button" class="btn2">Talk to an Agent</button>
+       </div>
+    </div>
+
 
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbBz8MmtgkZxT2hD_AMBKEIHr7MnPV1Ac&libraries=places&callback=initAutocomplete"

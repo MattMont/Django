@@ -11,6 +11,28 @@ html, body {
   padding: 0;
 }
 
+html {
+    overflow: hidden;
+}
+body {
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.bg {
+    height: 66vh;
+    background-image: url("../images/clouds-dawn-drone-624929.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex-row {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+}
+
 #locationField, #controls {
   position: relative;
   width: 480px;
@@ -51,4 +73,27 @@ html, body {
 }
 #id_addy {
   width: 400px;
+}
+.center {
+    color: blue;
+    text-align: center;
+    margin: 5% auto;
+    padding: 0;
+}
+
+.center h2 {
+    margin: 0;
+}
+
+.frm {
+    max-width: 500px;
+    margin: 2% auto;
+}
+
+.btn1 {
+    margin: 1em;
+}
+
+.btn2 {
+    margin: 1em;
 }
