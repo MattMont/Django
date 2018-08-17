@@ -7,8 +7,9 @@ https://developers.google.com/maps/documentation/javascript/examples/places-auto
 <html>
   <head>
     <title>Estimate</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'homevalue/css/autoaddress.css' %}">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
@@ -27,23 +28,25 @@ https://developers.google.com/maps/documentation/javascript/examples/places-auto
         <div class="flex-row">
             <div class="frm">
                 <form method="post">
-                  {% csrf_token %}
-                  {{ form }}
-                  <button type="submit">Search</button>
+                      {% csrf_token %}
+                      {{ form }}
+                      <button type="submit">
+                           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                      </button>
                 </form>
             </div>
         </div>
     </div>
     <div>
         <div class="flex-row">
-            <div class="center">
+            <div class="center-text">
                 <h2>Don't Jump Through Hoops.</h2>
                 <p>Agents will....</p>
             </div>
        </div>
        <div class="flex-row">
            <button type="button" class="btn1">Sell With Revre</button>
-           <button type="button" class="btn2">Talk to an Agent</button>
+           <button type="button" class="btn1">Talk to an Agent</button>
        </div>
     </div>
 
