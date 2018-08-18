@@ -72,12 +72,7 @@ body {
   margin-bottom: 2px;
 }
 #id_addy {
-  width: 16em;
-  height: 100%;
-  padding: 1em;
-  margin: 0 auto;
-  background-color:white;
-  border:0;
+  width: 400px;
 }
 .center {
     color: white;
@@ -99,42 +94,37 @@ body {
     margin: 0;
 }
 .frm {
-    background-color: white;
+
 }
 
 @media screen and (min-width: 768px) {
     .frm {
         border:1px solid #000;
         display:inline-block;
-    }
-    #id_addy {
-        width: 400px;
-    }
-
-    .search-btn {
-        border: none;
         background-color: white;
-        padding: 1em;
-        width: auto;
-        height: auto;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin-left: -0.5%;
     }
 }
 
-@media screen and (max-width: 420px) {
-    .search-btn {
-        margin-left: -3%;
-    }
+.frm input {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    margin: 0;
+    background-color:white;
+    border:0;
+
+
 }
 
-
-.search-btn {
-    background-color: white;
-    border:none;
-    width: auto;
-    height: auto;
+.frm button {
+  border: none;
+  background-color: white;
+  padding: 1em;
+  width: auto;
+  height: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: -0.5%;
 }
 
 .btn1 {
