@@ -18,3 +18,18 @@ class Homeinfo(models.Model):
         #return reverse('hView', kwargs={'id': str(self.id)})
     def __str__(self):
         return self.address + ", " + self.city + ", " + self.province + ", " + self.country
+
+
+
+class Listing(models.Model):
+    image = models.CharField(max_length=200)
+    price = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    realtor = models.CharField(max_length=200)
+    description = models.CharField(max_length=300)
+    bedrooms = models.IntegerField()
+    bathrooms = models.FloatField()
+    post_date = models.DateTimeField('date posted')
+    def __str__(self):
+        return self.address
