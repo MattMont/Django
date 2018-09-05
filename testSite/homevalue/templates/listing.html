@@ -13,10 +13,10 @@
        {% if latest_listings %}
           <ul>
           {% for listing in latest_listings %}
-              {% with '/listing/images/'|add:listing.image as imagePath %}
+              {% with '/homevalue/images/'|add:listing.image as imagePath %}
               {% load static %}
               <img src="{% static imagePath %}" alt="my image">
-              <li><a href="/listings/{{ listing.id }}/">{{ listing.address }}</a></li>
+              <li><a href="/homevalue/{{ listing.id }}/">{{ listing.address }}</a></li>
               {% endwith %}
           {% endfor %}
           </ul>

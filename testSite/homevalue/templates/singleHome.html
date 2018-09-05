@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="{% static 'homevalue/css/singleHome.css' %}">
 
   </head>
-  <h1> {{house.address}}</h1>
+  <h1 id="address"> {{house.address}}</h1>
   <body>
     <div id="map"></div>
     <div id="pano"></div>
-    <script src="{% static 'homevalue/js/singleHome.js' %}"></script>
+
     <script>
 
       function initialize() {
@@ -47,5 +47,5 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbBz8MmtgkZxT2hD_AMBKEIHr7MnPV1Ac&callback=initialize">
     </script>
   </body>
-  <h2>Your Estimate: {{house.estimate}}</h2>
+  <h2 id="estimate">Your Estimate: ${{house.estimate}}</h2>
 </html>

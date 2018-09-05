@@ -2,11 +2,34 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  text-align: center;
+
 }
 #map, #pano {
   float: left;
   height: 50%;
-  width: 50%;
+  width: 48%;
+  margin: 5% 1%;
+  border-radius: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+@media screen and (max-width: 420px) {
+    #map, #pano {
+        height: 30%;
+    }
+}
+
+#address {
+    color: black;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 2% auto;
+    padding: 0;
+}
+
+#estimate {
+    color: black;
+    text-align: center;
+    margin: 1em;
+    padding: 0;
 }
