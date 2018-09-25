@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'homevalue',
+    'homepage',
     'dal',
     'dal_select2',
     'django.contrib.admin',
