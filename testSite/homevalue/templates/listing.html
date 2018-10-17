@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Listings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+
+  </head>
+  <body>
+       {% if latest_listings %}
+          <ul>
+          {% for listing in latest_listings %}
+              {% with '/homevalue/images/'|add:listing.image as imagePath %}
+              {% load static %}
+              <img src="{% static imagePath %}" alt="my image">
+              <li><a href="/homevalue/{{ listing.id }}/">{{ listing.address }}</a></li>
+              {% endwith %}
+          {% endfor %}
+          </ul>
+      {% else %}
+          <p>No polls are available.</p>
+      {% endif %}
+  </body>
