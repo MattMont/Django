@@ -1,0 +1,51 @@
+<!-- <html>
+<h1>Here is your house!</h1>
+{% if house %}
+	<h2>{{ house.address }}<h2>
+	<body> Estimate: ${{house.estimate}}</body>
+{% else %}
+	<body> Nothing to see here </body>
+{% endif %}
+</html> -->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Street View side-by-side</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'homevalue/css/singleHome.css' %}">
+
+  </head>
+  <h1 id="address"> {{house.address}}</h1>
+  <body>
+    <div id="map"></div>
+    <div id="pano"></div>
+
+    <script>
+
+      function initialize() {
+        var fenway = {lat: 42.345573, lng: -71.098326};
+        var stView = {lat: {{house.latitude}}, lng:{{house.longitude}}}
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: stView,
+          zoom: 14
+        });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'), {
+              position: stView,
+              pov: {
+                heading: 0,
+                pitch: -10
+              }
+            });
+        map.setStreetView(panorama);
+      }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbBz8MmtgkZxT2hD_AMBKEIHr7MnPV1Ac&callback=initialize">
+    </script>
+  </body>
+  <h2 id="estimate">Your Estimate: ${{house.estimate}}</h2>
+</html>
