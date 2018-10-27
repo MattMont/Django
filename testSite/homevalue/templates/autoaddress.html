@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<!--
+Based on
+https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+-->
+<html>
+  <head>
+    <title>Estimate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'homevalue/css/autoaddress.css' %}">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <script src="{% static 'homevalue/js/autoaddress.js' %}"></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <!--Navigation-->
+    <div class="navtop">
+        <img class="logo" src="/static/homevalue/images/revre_logo_white.png" width="70" height="60">
+    </div>
+    <!--End Navigation-->   
+
+    <!-- Header Banner -->
+    <div class="bg">
+        <div class="flex-row">
+            <div class="center">
+                <h1>Get Your Home Value.</h1>
+                <h1>Instantly.</h1>
+            </div>
+        </div>
+
+        <div class="center">
+            <div class="frm">
+                <form method="post">
+                      {% csrf_token %}
+                      {{ form }}
+                      <button type="submit" class="search-btn">
+                           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                      </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Header Banner -->
+
+    <!-- Introductory Section -->
+    <div>
+        <div class="flex-row">
+            <div class="center-text">
+                <h2>You're Unique. Your Real Estate Experience Should Be Too.</h2>
+                <p>In an Industry of status quos, you deserve better. That means gone are the
+              are the insane real estate agent commisions of yesterday.</p>
+              <p>You only pay for the services that you use. It's a no brainer.</p>
+            </div>
+       </div>
+    <!-- End Into Section -->
+
+
+    <!--Buttons-->
+
+       <div class="flex-row">
+           <!-- <button type="button" class="btn1" role="button"><a href="http://revre.ca">List with Revre</button>
+           <button type="button" class="btn2"><a href="http://revre.ca">Speak to an Agent</button> -->
+          
+        <!-- New Buttons -->
+        <div class="btn1">
+          <a href="http://revre.ca/list-with-us"> 
+              List with Revre
+          </a>
+        </div>
+        <div class="btn2">
+          <a href="http://revre.ca/contact-agent">
+            Speak to an Agent
+          </a>
+        </div>  
+        <!-- End New Button -->
+       </div>
+    <!-- End Buttons  -->
+
+
+
+
+    <div>
+        <div class="flex-row">
+          <div class="center-text">
+              <h2>Revre is ReImagining Real Estate</h2>
+          </div>
+          
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbBz8MmtgkZxT2hD_AMBKEIHr7MnPV1Ac&libraries=places&callback=initAutocomplete"
+        async defer></script>
+  </body>
+</html>

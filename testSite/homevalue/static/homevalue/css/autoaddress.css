@@ -1,0 +1,262 @@
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+
+#map {
+  height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    overflow: scroll;
+}
+body {
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/*Navbar*/
+
+.navtop{
+  justify-content: flex-start;
+  background-color: transparent;
+  position: relative;
+}
+
+.logo {
+  padding: 5px;
+}
+
+/*End Navbar*/
+
+/*Header Section*/
+
+.bg {
+    height: 40vh;
+    margin-top: -60px;
+    margin-bottom: 50px;
+    background-image: url("../images/clouds-dawn-drone-624929.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Header Section*/
+
+.flex-row {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+}
+
+#locationField, #controls {
+  position: relative;
+  width: 480px;
+}
+#autocomplete {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 99%;
+}
+.label {
+  text-align: right;
+  font-weight: bold;
+  width: 100px;
+  color: #303030;
+}
+#address {
+  border: 1px solid #000090;
+  background-color: #f0f0ff;
+  width: 480px;
+  padding-right: 2px;
+}
+#address td {
+  font-size: 10pt;
+}
+.field {
+  width: 99%;
+}
+.slimField {
+  width: 80px;
+}
+.wideField {
+  width: 200px;
+}
+#locationField {
+  height: 20px;
+  margin-bottom: 2px;
+}
+#id_addy {
+  width: 16em;
+  height: 100%;
+  padding: 1em;
+  margin: 0 auto;
+  background-color:white;
+  border:0;
+}
+.center {
+    color: black;
+    text-shadow: 2px 2px 4px #333131;
+    justify-content: center;
+    text-align: center;
+    margin: 2%;
+    padding-top: 15px;
+}
+
+.center-text {
+    color: black;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 2% auto;
+    padding: 0;
+}
+
+.center h2 {
+    margin: 0;
+}
+.frm {
+    background-color: white;
+}
+
+@media screen and (min-width: 768px) {
+    .frm {
+        border:1px solid #000;
+        display:inline-block;
+    }
+    #id_addy {
+        width: 400px;
+    }
+
+    .search-btn {
+        border: none;
+        background-color: white;
+        padding: 1em;
+        width: auto;
+        height: auto;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin-left: -0.5%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .search-btn {
+        margin-left: -3%;
+    }
+}
+
+
+.search-btn {
+    background-color: white;
+    border:none;
+    width: auto;
+    height: auto;
+}
+
+
+/*List with Revre button*/
+
+.btn1 {
+    margin: 2em;
+    display: inline-block;
+    border-radius: 2px;
+    background-color: #4CAF50;
+    border: 2px solid white;
+    height: 100%;
+    color: white;
+    text-align: center;
+    font-size: 100%;
+    padding: 0.5em;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.btn1 a{
+  color: white;
+}
+
+.btn1:hover{
+  background-color: white;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+}
+
+.btn1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.btn1 span:after {
+content: '\00bb';  /* CSS Entities. To use HTML Entities, use &#8594;*/
+position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -1em;
+  transition: 0.5s;
+}
+.btn1:hover span {
+  padding-right: 25px;
+}
+.btn1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*Speak to an agent button*/
+.btn2 {
+    margin: 1em;
+}
+
+.btn2 {
+    margin: 1em;
+    display: inline-block;
+    border-radius: 2px;
+    background-color: #f7e547;
+    border: 2px solid white;
+    height: 100%;
+    color: black;
+    text-align: center;
+    font-size: 100%;
+    font-style: bold;
+    padding: 0.5em;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.btn2:hover{
+  background-color: #fff;
+  border: 2px solid black;
+}
+
+.btn2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.btn2 span:after {
+content: '\00bb';  /* CSS Entities. To use HTML Entities, use &#8594;*/
+position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -1em;
+  transition: 0.5s;
+}
+.btn2:hover span {
+  padding-right: 25px;
+}
+.btn2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn2 {
+    margin: 1em;
+}
+

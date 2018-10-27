@@ -1,0 +1,82 @@
+
+body {
+	height: 100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	min-height:100vh;
+}
+
+
+
+.flex-row{
+	display: flex;
+}	
+/*first division is for the sign in options and creating an account*/
+.div1{
+	min-height: 66vh;
+	min-width: 50vh;
+}
+/*this is for services*/
+.div2{
+	min-height: 44vh;
+	min-width: 50vh;
+}
+/*to center text*/
+.div3{
+	height:100%;
+	width:100%;
+	text-align:center;
+	margin-top:5%;
+}
+
+.div4{
+	min-width:50vh;
+	min-height:44vh;	
+}
+
+.p-r{
+	position: relative;
+}
+
+.p-a{
+	position:absolute;
+}
+
+.centxt{
+	text-align: center;	
+}
+
+.btn1{
+	top:80%;
+	width:12.5%;
+	height:10%;
+	min-width:100px;
+	right:55%;
+}
+
+.btn2{
+	top:80%;
+	width:12.5%;
+	height:10%;
+	min-width:100px;
+	left:55%;
+}
+
+.btn3{
+	min-width:100px;
+	height:10%;
+}
+
+.c-blue{
+	background-color: #70C6CC;
+}
+.c-green{
+	background-color: #6BB177;
+}
+.c-yellow{
+	background-color: #E0D86B;
+}
+.c-pink{
+	background-color:#F47093;
+}
