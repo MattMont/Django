@@ -69,9 +69,9 @@ https://developers.google.com/maps/documentation/javascript/examples/places-auto
 
     <!--Buttons-->
     <div class="center-text">
-      <a class="btn btn-success btn-lg call-to-action" href="http://revre.ca/list-with-us" role="button">List With Revre</a>
+      <a class="btn btn-success btn-lg call-to-action" href="{% url "listWith" %}" role="button">List With Revre</a>
 
-      <a class="btn btn-outline-success btn-lg call-to-action" id="speak" href="http://revre.ca/speak-with-agent" role="button">Speak to an Agent</a>
+      <a class="btn btn-outline-success btn-lg call-to-action"  href="{% url "speakAgent" %}"  role="button">Speak to an Agent</a>
     </div>
 
 
