@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from homevalue.forms import ValueForm, valAutoForm, valAuto
-<<<<<<< HEAD
 from homevalue.models import Homeinfo,Listing
 from django.views import generic
 from django.urls import reverse, reverse_lazy
@@ -9,25 +8,11 @@ from django.shortcuts import render
 
 import json
 from dal import autocomplete
-=======
-from homevalue.models import Homeinfo
-from django.views import generic
-from django.urls import reverse, reverse_lazy
-
-import json
-from dal import autocomplete
-
->>>>>>> 1942034eb499aadce85ca5008d37798bca61bf91
 import sys, requests
 
 
 # Create your views here.
 
-<<<<<<< HEAD
-# Auto Compelete
-=======
-# Auto Compelete 
->>>>>>> 1942034eb499aadce85ca5008d37798bca61bf91
 # Base on: https://django-autocomplete-light.readthedocs.io/en/3.1.3/tutorial.html
 # class homeAutoComplete(autocomplete.Select2QuerySetView):
 #     template_name = 'autoComplete.html'
@@ -73,13 +58,7 @@ def get_addy(request):
     mimetype = 'application/json'
     return HttpResponse(data, mimetype)
 
-<<<<<<< HEAD
 def indexAuto(request):
-
-=======
-
-def indexAuto(request):
->>>>>>> 1942034eb499aadce85ca5008d37798bca61bf91
     if request.method == 'POST':
         search = ValueForm(request.POST)
         #search = valAutoForm(request.POST)
@@ -92,11 +71,6 @@ def indexAuto(request):
             sleep = more.split(' ')
 
             # Our Database doesn't exactly match up with google
-<<<<<<< HEAD
-            # So we have to cut some of the data off
-=======
-            # So we have to cut some of the data off 
->>>>>>> 1942034eb499aadce85ca5008d37798bca61bf91
             # Needs to be tested more but i think it works?
             if(sleep[-1] == 'Avenue'):
                 for part in sleep:
@@ -121,14 +95,10 @@ def indexAuto(request):
     else:
         search = ValueForm()
 
-<<<<<<< HEAD
     context = {
         'form': search
     }
     return render(request, "autoaddress.html", context)
-=======
-    return render(request, "autoaddress.html", {'form': search})
->>>>>>> 1942034eb499aadce85ca5008d37798bca61bf91
 
 def speakAgent(request):
     return render(request, "speak-with-agent.html")
@@ -155,11 +125,6 @@ def index(request):
     #return HttpResponse('HELLO FROM HOMEVALUE')
 
 
-<<<<<<< HEAD
-# Single home info
-=======
-# Single home info 
->>>>>>> 1942034eb499aadce85ca5008d37798bca61bf91
 def singleView(request, id):
     aTest = Homeinfo.objects.get(id=id)
 
@@ -170,8 +135,3 @@ def singleView(request, id):
 
 
     return render(request, "singleHome.html", {'house': aTest})
-<<<<<<< HEAD
-    #return HttpResponse("Test")
-=======
-    #return HttpResponse("Test")
->>>>>>> 1942034eb499aadce85ca5008d37798bca61bf91
