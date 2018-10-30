@@ -103,6 +103,12 @@ def indexAuto(request):
     }
     return render(request, "autoaddress.html", context)
 
+def speakAgent(request):
+    return render(request, "speak-with-agent.html")
+
+
+def listWith(request):
+    return render(request, "list-with-us.html")
 
 
 # No autocomplete

@@ -181,6 +181,10 @@ body {
 
 
 /*Speak to an agent button*/
+/*Can think of better name later*/
+.call-to-action{
+  width: 210px;
+}
 .btn-outline {
     background-color: transparent;
     color: inherit;
@@ -195,7 +199,7 @@ body {
 .infocontainer {
   width: 100%;
   height: 21vw;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
 }
 
 
