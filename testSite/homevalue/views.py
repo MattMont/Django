@@ -130,6 +130,12 @@ def indexAuto(request):
     return render(request, "autoaddress.html", {'form': search})
 >>>>>>> 1942034eb499aadce85ca5008d37798bca61bf91
 
+def speakAgent(request):
+    return render(request, "speak-with-agent.html")
+
+
+def listWith(request):
+    return render(request, "list-with-us.html")
 
 
 # No autocomplete
