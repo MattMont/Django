@@ -86,12 +86,12 @@ def indexAuto(request):
             #print(final)
 
             test = Homeinfo.objects.all().filter(address__contains=final)
-
+            if test.exists():
             # If somehow there is a longer list
-            if(len(test) > 1):
-                return render(request, "resultsTest.html", {'results': test})
-            else:
-                return render(request, "singleHome.html", {'house': test[0]})
+                if(len(test) > 1):
+                    return render(request, "resultsTest.html", {'results': test})
+                else:
+                    return render(request, "singleHome.html", {'house': test[0]})
     else:
         search = ValueForm()
 
