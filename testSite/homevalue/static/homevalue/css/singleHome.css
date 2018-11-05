@@ -28,8 +28,16 @@ html, body {
 }
 
 #estimate {
-    color: black;
+    color: darkred;
     text-align: center;
     margin: 1em;
     padding: 0;
 }
+
+#feedback {
+    color: darkblue;
+    text-align: center;
+    margin: 1em;
+    padding: 0;
+}
+
