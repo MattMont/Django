@@ -47,11 +47,13 @@ body {
 }
 
 
-.background-image{
+.b-image{
     background-image: url("../images/clouds-dawn-drone-624929.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  /*  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+  /* filter: blur(5px);*/
 }
 
 .flex-row {
