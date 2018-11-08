@@ -108,7 +108,7 @@ body {
 }
 .center {
     color: white;
-    text-shadow: 2px 2px 4px #333131;
+    text-shadow: 2px 2px 4px #292a2b;
     justify-content: center;
     text-align: center;
     margin: 2%;
@@ -128,11 +128,11 @@ body {
 }
 .frm {
     background-color: white;
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.4);
 }
 
 @media screen and (min-width: 768px) {
     .frm {
-        border:1px solid #000;
         display:inline-block;
     }
     #id_addy {
@@ -166,6 +166,7 @@ body {
     height: auto;
     color: black;
 }
+
 
 
 /*List with Revre button*/
