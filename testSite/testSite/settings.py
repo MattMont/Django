@@ -26,9 +26,8 @@ SECRET_KEY = '9uh#x6*8^^1d^1^zao@6y2%_+n#-71$3jc*in^q%yh0hej%cly'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-ALLOWED_HOSTS = ['revre.ca','192.168.99.100','35.238.69.174']
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -53,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',    
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'testSite.urls'
