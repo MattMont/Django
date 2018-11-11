@@ -22,18 +22,22 @@ RUN apt-get install -y python3-dev
 RUN apt-get install -y nano
 #RUN apt-get install -y mysql-server
 RUN apt-get install -y nginx
-# Create application subdirectories
-WORKDIR $DOCKYARD_SRVHOME
-RUN mkdir media static logs
+RUN add-apt-repository -y ppa:certbot/certbot
+RUN apt install -y python-certbot-nginx
 #Install dependencies
 COPY /testSite/requirements.txt /requirements.txt
 RUN pip3 install -r /requirements.txt
 
+# Create application subdirectories
+WORKDIR $DOCKYARD_SRVHOME
+RUN mkdir media static logs
+
 # Copy application source code to SRCDIR
 COPY $DOCKYARD_SRC $DOCKYARD_SRVPROJ
-# Install Python dependencies
+
 # Port to expose
 EXPOSE 8000
+
 # Copy entrypoint script into the image
 WORKDIR $DOCKYARD_SRVPROJ
 COPY ./docker-entrypoint.sh /
