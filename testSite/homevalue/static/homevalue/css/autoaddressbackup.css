@@ -93,10 +93,6 @@ body {
 .center h2 {
     margin: 0;
 }
-.frm {
-
-}
-
 @media screen and (min-width: 768px) {
     .frm {
         border:1px solid #000;
