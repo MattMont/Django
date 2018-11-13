@@ -29,38 +29,30 @@ https://developers.google.com/maps/documentation/javascript/examples/places-auto
     <!--End Navigation-->
 
     <!-- Header Banner -->
-    <div class="bg background-image">
-        <div class="flex-row">
-            <div class="center">
+
+    <div class="bg-image">
+      <div class="bg-text">
+        <div class="flex-column">
                 <h1>Get Your Home Value.</h1>
                 <h1>Instantly.</h1>
-            </div>
-        </div>
-
-        <div class="center">
-  </head>
-
-
-    <div class="bg">
-        <div class="flex-row">
-            <div class="center">
                 <h2>Get Your Home Price.</h2>
                 <h2>Right Here, Right Now.</h2>
-            </div>
         </div>
-
-        <div class="flex-row">
-            <div class="frm">
-                <form method="post">
-                      {% csrf_token %}
-                      {{ form }}
-                      <button type="submit" class="search-btn">
-                           <i class="fas fa-search"></i>
-                      </button>
-                </form>
-            </div>
+      </div>
+      <div class="flex-row">
+        <div class="frm">
+          <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="search-btn">
+                     <i class="fas fa-search"></i>
+                </button>
+          </form>
         </div>
+      </div>
     </div>
+
+
     <!-- End Header Banner -->
 
     <!-- Introductory Section -->
@@ -98,59 +90,67 @@ https://developers.google.com/maps/documentation/javascript/examples/places-auto
             <p>You only pay for the services that you use. It's a no brainer.
             </p>
             <p>That Means that if you have sold 0 houses in your entire life, or have sold 50 in the last year, we have services to match you and your real estate experience.</p>
+
       </div>
     </div>
 
     <!-- End info section -->
 
-    <!-- Picture Right -->
 
-    <!-- Picture Left -->
-  <div class="infocontainer">
-    <div class="left-container">
-      <div class="left-content">
+
+    <!-- Picture Left Text Right-->
+  <div class="infocontainer-flex">
+    <div class="left-infocontainer">
+      <div class="img-infocontainer">
           <img src="/static/homevalue/images/Revre-Technologies_2.png">
       </div>
     </div>
-  <div class="right-container">
-        <div class="right-content">
+    <div class="right-infocontainer">
+        <div class="text-infocontainer">
           <h2>100% Gimmick Free.</h2>
-          <p>No more giving out your information until you are ready to list your home.</p>
-          <p>No more phone calls over dinner asking if you are in the process of selling</p>
-          <p>or buying a home.  There are no hard sell tactics here.</p>
-          <p>You are in the driver's seat.</p>
+          <p>No more giving out your information until you are ready to list your home.
+          No more phone calls over dinner asking if you are in the process of selling
+          or buying a home.  There are no hard sell tactics here.
+          You are in the driver's seat.</p>
         </div>
     </div>
   </div>
 
-  <!-- Picture Left -->
-    <div class="infocontainer">
-    <div class="right-container">
-      <div class="right-content">
+  <!-- Text Left Picture Right -->
+  <div class="infocontainer-flex">
+    <div class="left-infocontainer">
+        <div class="text-infocontainer">
+          <h2>100% Gimmick Free.</h2>
+          <p>No more giving out your information until you are ready to list your home.
+          No more phone calls over dinner asking if you are in the process of selling
+          or buying a home.  There are no hard sell tactics here.
+          You are in the driver's seat.</p>
+        </div>
+    </div>
+    <div class="right-infocontainer">
+      <div class="img-infocontainer">
           <img src="/static/homevalue/images/Revre-Technologies_2.png">
       </div>
     </div>
-  <div class="left-container">
-        <div class="left-content">
+  </div>
+
+  <!-- Picture Left Text Right-->
+  <div class="infocontainer-flex">
+    <div class="left-infocontainer">
+      <div class="img-infocontainer">
+          <img src="/static/homevalue/images/Revre-Technologies_2.png">
+      </div>
+    </div>
+    <div class="right-infocontainer">
+        <div class="text-infocontainer">
           <h2>100% Gimmick Free.</h2>
-          <p>No more giving out your information until you are ready to list your home.</p>
-          <p>No more phone calls over dinner asking if you are in the process of selling</p>
-          <p>or buying a home.  There are no hard sell tactics here.</p>
-          <p>You are in the driver's seat.</p>
+          <p>No more giving out your information until you are ready to list your home.
+          No more phone calls over dinner asking if you are in the process of selling
+          or buying a home.  There are no hard sell tactics here.
+          You are in the driver's seat.</p>
         </div>
     </div>
   </div>
-
-
-
-
-
-
-    <div class="inforight">
-       <h2>100% gimmick free.</h2>
-       <p>no more giving out your information until you are ready to list your home.  no more phone calls over dinner asking if you are in the process of selling or buying a home.  there are no hard sell tactics here.  you are in the driver's seat.</p>
-    </div>
-
 
     <div class="footer">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJfGHULnjAjnf83Dz9bjT0Znn0o-MwDto&libraries=places&callback=initAutocomplete"
