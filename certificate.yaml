@@ -1,0 +1,22 @@
+#VOYAGER CERTIFICATE
+#https://appscode.com/products/voyager/7.1.1/guides/certificate/dns/google-cloud/
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: revre.ca
+  namespace: default
+spec:
+  secretname: tls-cert
+  issuerRef:
+    name: letsencrypt-prod
+  commonName: revre.ca
+  dnsNames:
+  - revre.ca
+  - www.revre.ca
+  acme:
+    config:
+    - dns01:
+        provider: prod-dns
+      domains:
+      - www.revre.ca 
+      - revre.ca

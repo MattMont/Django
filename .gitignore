@@ -120,3 +120,7 @@ dmypy.json
 
 #emacs
 *~
+
+#crt+key
+.crt
+.key

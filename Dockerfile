@@ -22,8 +22,6 @@ RUN apt-get install -y python3-dev
 RUN apt-get install -y nano
 #RUN apt-get install -y mysql-server
 RUN apt-get install -y nginx
-RUN add-apt-repository -y ppa:certbot/certbot
-RUN apt install -y python-certbot-nginx
 #Install dependencies
 COPY /testSite/requirements.txt /requirements.txt
 RUN pip3 install -r /requirements.txt
