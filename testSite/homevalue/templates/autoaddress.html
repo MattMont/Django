@@ -15,8 +15,9 @@ https://developers.google.com/maps/documentation/javascript/examples/places-auto
     {% load static %}
     <link rel="stylesheet" href="{% static 'homevalue/css/autoaddress.css' %}">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="{% static 'font-awesome/css/all.min.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <script src="{% static 'homevalue/js/autoaddress.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'templates/theme.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
@@ -145,9 +146,154 @@ https://developers.google.com/maps/documentation/javascript/examples/places-auto
         </div>
     </div>
   </div>
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-dark">
+    <div class="container space-2">
+      <div class="row justify-content-md-between">
+        <div class="col-6 col-md-3 col-lg-2 order-lg-3 mb-7 mb-lg-0">
+          <h3 class="h6 text-white mb-3">About</h3>
 
-    <div class="footer">
+          <!-- List Group -->
+          <div class="list-group list-group-flush list-group-transparent">
+            <a class="list-group-item list-group-item-action" href="about.html">About Revre</a>
+            <a class="list-group-item list-group-item-action" href="team.html">Our Team</a>
+            <a class="list-group-item list-group-item-action" href=" <!-- Django app --> ">Home Evaluation</a>
+            <a class="list-group-item list-group-item-action" href= <>Platform</a>
+          </div>
+          <!-- End List Group -->
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2 order-lg-4 mb-7 mb-lg-0">
+          <h3 class="h6 text-white mb-3">Company</h3>
+
+          <!-- List Group -->
+          <div class="list-group list-group-flush list-group-transparent">
+            <a class="list-group-item list-group-item-action" href="contactus.html">Contact Us</a>
+            <a class="list-group-item list-group-item-action" href="sitemap.html">Sitemap</a>
+            <a class="list-group-item list-group-item-action" href="careers.html">Careers</a>
+            <a class="list-group-item list-group-item-action" href="terms.html">Terms &amp; Conditions</a>
+            <a class="list-group-item list-group-item-action" href="privacy.html">Privacy &amp; Policy</a>
+          </div>
+          <!-- End List Group -->
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2 order-lg-5 mb-7 mb-lg-0">
+          <h3 class="h6 text-white mb-3">Resources</h3>
+
+          <!-- List Group -->
+          <div class="list-group list-group-flush list-group-transparent">
+            <a class="list-group-item list-group-item-action" href="https://revrefinancial.com">Revre Financial</a>
+            <a class="list-group-item list-group-item-action" href="https://soundcloud.com/user-775419539">Revre Radio</a>
+            <a class="list-group-item list-group-item-action" href="https://revre.ca/blog">Revre Magazine</a>
+            <a class="list-group-item list-group-item-action" href="http://fernii.com">Fernii</a>
+          </div>
+          <!-- End List Group -->
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2 order-lg-6 mb-7 mb-lg-0">
+          <h3 class="h6 text-white mb-3">Social</h3>
+
+          <!-- List -->
+          <div class="list-group list-group-flush list-group-transparent">
+            <a class="list-group-item list-group-item-action" href="https://www.facebook.com/revretech/">
+              <span class="fab fa-facebook-f min-width-3 text-center mr-2"></span>
+              Facebook
+            </a>
+            <a class="list-group-item list-group-item-action" href="https://twitter.com/RevreTech">
+              <span class="fab fa-twitter min-width-3 text-center mr-2"></span>
+              Twitter
+            </a>
+            <a class="list-group-item list-group-item-action" href="https://www.instagram.com/revretech/">
+              <span class="fab fa-instagram min-width-3 text-center mr-2"></span>
+              Instagram
+            </a>
+          </div>
+          <!-- End List -->
+        </div>
+
+        <div class="col-lg-4 order-lg-1 d-flex align-items-start flex-column">
+          <!-- Logo -->
+          <a class="d-inline-block mb-5" href="index.html" aria-label="Space">
+            <!--<img src="/static/logos/revre_logo_white.png" alt="Logo" style="width: 50px; max-width: 120%;">-->
+            <img src="{% static '/logos/revre_logo_white.png' %}" alt="Logo" style="width: 75px; max-width: 120%;">
+          </a>
+          <!-- End Logo -->
+
+          <!-- Language -->
+          <div class="btn-group d-block position-relative mb-4 mb-lg-auto">
+            <a id="footerLanguageInvoker" class="btn-text-secondary d-flex align-items-center u-unfold--language-btn rounded py-2 px-3" href="javascript:;" role="button"
+               aria-controls="footerLanguage"
+               aria-haspopup="true"
+               aria-expanded="false"
+               data-unfold-event="click"
+               data-unfold-target="#footerLanguage"
+               data-unfold-type="css-animation"
+               data-unfold-duration="300"
+               data-unfold-delay="300"
+               data-unfold-hide-on-scroll="false"
+               data-unfold-animation-in="slideInUp"
+               data-unfold-animation-out="fadeOut">
+              <span class="font-size-14">English</span>
+              <span class="fa fa-angle-down u-unfold__icon-pointer u-unfold--language-icon-pointer ml-4"></span>
+            </a>
+
+            <!-- Content -->
+            <div id="footerLanguage" class="u-unfold u-unfold--language bottom-0 left-0" aria-labelledby="footerLanguageInvoker">
+              <div class="py-6 px-5">
+                <h4 class="h6 mb-4">Select your language</h4>
+
+                <div class="row">
+                  <div class="col-6">
+                    <!-- List of Languages -->
+                    <div class="list-group list-group-borderless list-group-flush">
+                      <a class="active d-flex align-items-center list-group-item list-group-item-action" href="#">
+                        English
+                      </a>
+
+                    </div>
+                    <!-- End List of Languages -->
+                  </div>
+
+                  <div class="col-6">
+                    <!-- List of Languages -->
+                    <div class="list-group list-group-borderless list-group-flush">
+
+                    </div>
+                    <!-- End List of Languages -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Signup -->
+              <a class="u-unfold--language__link p-5" href="../pages/signup-simple.html">
+                <small class="d-block text-muted mb-1">More languages coming soon.</small>
+                <small class="d-block">Signup to get notified <span class="fa fa-arrow-right u-unfold__icon-pointer"></span></small>
+              </a>
+              <!-- End Signup -->
+            </div>
+            <!-- End Content -->
+          </div>
+          <!-- End Language -->
+
+          <p class="small text-muted">All rights reserved. &copy; Revre Technologies 2018 </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJfGHULnjAjnf83Dz9bjT0Znn0o-MwDto&libraries=places&callback=initAutocomplete"
         async defer></script>
   </body>
+
+    <!-- ========== END FOOTER ========== -->
+
+    <!-- JS Global Compulsory -->
+    <script src="{% static '/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static '/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static '/bootstrap/bootstrap.min.js' %}"></script>
+
+    <!-- JS Space -->
+    <script src="{% static '/templates/hs.core.js' %}"></script>
+
 </html>
